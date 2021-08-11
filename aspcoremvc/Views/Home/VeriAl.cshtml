@@ -1,0 +1,41 @@
+﻿@model List<aspcoremvc.Services.WeatherService.Result>
+
+@{
+    ViewData["Title"] = "Hava Durumu";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Hava Durumu&nbsp;</h1>
+    <p></p>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <br />
+    <form asp-action="VeriAl" asp-controller="home" method="post">
+        <input type="text" name="txtBox1" value="">     </input>   <button>Gonder</button><br />
+
+    </form>
+    <br />
+    <table class="table table-hover">
+        <tr>
+            <th>TARIH</th>
+            <th>DURUM</th>
+            <th>SICAKLIK</th>
+            <th>EN DUSUK</th>
+            <th>EN YUKSEK</th>
+            <th>NEM</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Date @item.Day</td>
+                <td>@System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(item.Description)</td>
+                <td>@Math.Round(item.Degree, 0)°C</td>
+                <td>@Math.Round(item.Min, 0)°C</td>
+                <td>@Math.Round(item.Max, 0)°C</td>
+                <td>%@item.Humidity</td>
+            </tr>
+
+        }
+    </table>
+    &nbsp;
+    <p>Veriler <a href="https://collectapi.com/tr/">collectapi.com</a> sitesinden temin edilmektedir</p>
+</div>

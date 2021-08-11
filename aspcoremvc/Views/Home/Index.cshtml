@@ -1,0 +1,30 @@
+﻿
+
+@{
+    ViewData["Title"] = "Hava Durumu";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Hava Durumu&nbsp;</h1>
+    <p></p>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <br />
+    <form asp-action="VeriAl" asp-controller="home" method="post">
+        <input type="text" name="txtBox1" value="">     </input>   <button>Gonder</button>
+
+    </form>
+    <br />
+    <table class="table table-hover">
+        <tr>
+            <th>TARIH</th>
+            <th>DURUM</th>
+            <th>SICAKLIK</th>
+            <th>EN DUSUK</th>
+            <th>EN YUKSEK</th>
+            <th>NEM</th>
+        </tr>
+
+    </table>
+    &nbsp;
+    <p>Veriler <a href="https://collectapi.com/tr/">collectapi.com</a> sitesinden temin edilmektedir</p>
+</div>

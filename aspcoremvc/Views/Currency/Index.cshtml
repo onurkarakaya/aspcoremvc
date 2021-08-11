@@ -1,0 +1,28 @@
+﻿@model List<aspcoremvc.Services.CurrencyService.Currency>
+
+@{
+    ViewData["Title"] = "Doviz Kurlari";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<h1 class="display-4" align="center">Doviz Kurlari</h1>
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>DOVIZ KURU</th>
+        <th>ALIS</th>
+        <th>SATIS</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Rate</td>
+            <td>@item.Buy</td>
+            <td>@item.Sell</td>
+        </tr>
+
+    }
+</table>
+&nbsp;
+<p align="center">Veriler <a href="https://bigpara.hurriyet.com.tr/">bigpara.hurriyet.com.tr</a> sitesinden temin edilmektedir</p>
